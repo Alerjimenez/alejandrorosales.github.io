@@ -19,9 +19,7 @@
     :root {
       --background-color:  #000000;
       --text-color: rgb(255, 255, 255);
-      --icon-color: filter: invert(100%) sepia(5%) saturate(518%) hue-rotate(322deg) brightness(88%) contrast(89%);
-                 
-    }
+      }
   }
 
 body {
@@ -281,6 +279,7 @@ section {
 
 .btn__color__2 {
     background: #adadaa;
+    -webkit-tap-highlight-color: transparent;
 }
 
 
