@@ -1,6 +1,6 @@
 /* GENERAL */
 
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 
 * {
@@ -8,8 +8,27 @@
     padding: 0;    
 }
 
+/* Estilos para el modo claro */
+:root {
+    --background-color: #fff;
+    --text-color: #000;
+  }
+   
+  /* Estilos para el modo oscuro */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color:  #000000;
+      --text-color: rgb(255, 255, 255);
+      --icon-color: filter: invert(100%) sepia(5%) saturate(518%) hue-rotate(322deg) brightness(88%) contrast(89%);
+                 
+    }
+  }
+
 body {
     font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+      
 }
 
 html {
@@ -18,6 +37,7 @@ html {
 
 p {
     color: rgb(85, 85, 85);
+    color: var(--text-color);
 }
 
 /* TRANSITION */
@@ -44,18 +64,20 @@ nav {
     gap: 2rem;
     list-style: none;
     font-size: 1.5rem;
-}
+    }
 
 a {
     color: black;
     text-decoration: none;
     text-decoration: color white;
+    color: var(--text-color);
 }
 
 a:hover {
     color: grey;
     text-decoration: underline;
     text-underline-offset: 1rem;
+   
 }
 
 .logo {
@@ -75,6 +97,7 @@ a:hover {
 .hamburger__menu {
     position: relative;
     display: inline-block;
+    
 }
 
 .hamburger__icon {
@@ -91,6 +114,7 @@ a:hover {
     height: 2px;
     background-color: black;
     transition: all 0.3 ease-in-out;
+    background-color: var(--text-color);
 }
 
 .menu__link {
@@ -102,18 +126,23 @@ a:hover {
     max-height: 0;
     overflow: hidden;
     transition: all 0.3 ease-in-out;
-    }
+}
 
 .menu__link a {
     display: block;
     padding: 10px;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: black;
     text-decoration: none;
     transition: all 0.3 ease-in-out;
+    color: var(--text-color);
 }
 
+.menu__link li {
+    list-style: none;
+    background-color: var(--background-color);
+}
 
 .menu__link.open {
     max-height: 300px;
@@ -145,7 +174,6 @@ a:hover {
     transform: none;
 }
 
-
 /* SECTIONS */
 
 section {
@@ -169,15 +197,13 @@ section {
     height: 80vh;
 }
 
-
 .section__pic__container {
     display: flex;
     height: 400px;
     width: 400px;
     margin: auto 0;
-   }
+}
 
-     
 .section__text {
     align-self: center;
     text-align: center;
@@ -213,6 +239,7 @@ section {
 .icon {
     cursor: pointer;
     height: 2rem;
+    filter: invert(80%) sepia(0%) saturate(2%) hue-rotate(227deg) brightness(86%) contrast(91%);
 }
 
 /* BUTTONS */
@@ -243,22 +270,19 @@ section {
 
 .btn__color__1,
 .btn__color__2:hover {
-    background: rgb(53, 53, 53);
+    background: #000;
     color: white;
 }
 
-.btn__color__1:hover,
-.btn__color__2:hover {
-    background: rgb(0, 0, 0);
+.btn__color__1:hover {
+    background: #adadaa;
+    color: #000;
 }
 
 .btn__color__2 {
-    background: none;
+    background: #adadaa;
 }
 
-.btn __color__2:hover {
-    border: rgb(255, 255, 255) 0.1rem solid;
-}
 
 .btn__container {
     gap: 1rem;
@@ -274,10 +298,12 @@ section {
     gap: 2rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
+    
 }
 .about__details__container {
     justify-content: center;
     flex-direction: column;
+   
 }
 
 .about__containers, .about__details__container {
@@ -302,6 +328,7 @@ section {
     border: rgb(53, 53, 53) 0.1rem solid;
     border-color: rgb(163, 163, 163);
     text-align: center;
+    background-color: var(--background-color);
 }
 
 .section__container {
@@ -309,6 +336,11 @@ section {
     height: 80%;
 }
 
+.section__pic__container {
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
+}
 
 /* EXPERIENCE SECTION */
 
@@ -389,134 +421,5 @@ section {
     text-align: center;
   }
 
-  .nav__link__footer {
-    gap: 2rem;
-    list-style: none;
-    font-size: 1.5rem;
-}
-
-.nav__link__footer {
-    display: flex;
-}
-
-
-
-  /* DARK MODE SWITCH */
-
-  .switch {
-    width: 60px;
-    height: 32px;
-    padding: 0 3px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    border-radius: 100px;
-    border: rgb(0, 0, 0) 0.1rem;
-    background-color: rgb(85, 85, 85);
-
-  }
-    
-  .switch i {
-    font-size: 1.3rem;
-    color: #fdc21c;
-  }
-
-  .nav__link li:last-child.active i:first-child {
-    color: #fff;
-  }
-
-  .nav__link li:last-child.active {
-    background-color: chocolate;
-          
-  }
-
-    .nav__link li:last-child::before {
-    content: "";
-    position: absolute;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    background-color: whitesmoke ;
-    border: solid thin #000;
-    left: 0;
-    right: unset;
-    
-  }
-
-    .nav__link li:last-child.active::before {
-    right: 0;
-    left: unset;
-    border: solid thin rgb(85, 85, 85);
-    background-color: #313131;
-
-  }
-
-  body.active nav {
-    background-color: #313131;
-
-  }
-
-  body.active nav ul li a {
-   color: #cfcfcf;
-
-  }
-
- body.active .logo {
-    color: #cfcfcf;
-
- }
-
- 
- body.active {
-    background-color: #2c2c2c;
-    
- }
-
- body.active section h1 {
-    color: #cfcfcf;
-
- }
-
- body.active section p {
-    color: antiquewhite;
- }
-
- body.active .details__container {
-    background-color: gray;
- }
-
- body.active .contact__info__upper__container {
-    background-color: gray;
- }
-
- body.active .btn__color__2 {
-    color: #cfcfcf;
- }
-
- /* HAMBURGUER DARK MODE */
-
- body.active .menu__link {
-    background-color: #2c2c2c;
-      
- }
-
- body.active .menu__link a {
-    color: #cfcfcf;
-      
- }
-
   
   
-
-
-
- 
- 
-
- 
-  
-  
- 
-    
